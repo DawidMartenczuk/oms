@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i&subset=latin-ext');
+
+// Variables
+@import "variables";
+
+@import "fontawesome/fontawesome";
+@import "fontawesome/solid.scss";
+@import "fontawesome/brands.scss";
+
+// Bootstrap
+//@import '~bootstrap/scss/mixins/alert';
+//@import '~bootstrap/scss/mixins/background-variant';
+@import '~bootstrap/scss/mixins/';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    @include alert-variant(theme-color-level($color, -10), theme-color-level($color, -9), theme-color-level($color, 6));
+  }
+}
+
+@each $color, $value in $theme-colors {
+  @include bg-variant('.bg-#{$color}', $value);
+}
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@media (min-width: 1200px) {
+  .container {
+      max-width: 1200px;
+  }
+}
