@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = \App\WFMAG\Artykul::available()->detal()->paginate(10);
+        return view('product.index', ['products'=>$products]);
     }
 
     /**

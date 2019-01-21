@@ -2,9 +2,6 @@
 
 @section('content')
     <div class="container">
-        @php
-            $articles = \App\WFMAG\Artykul::available()->detal()->paginate(10);    
-        @endphp
         <table class="table">
             <thead>
                 <tr>
@@ -18,16 +15,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($articles as $article)
+                @foreach($products as $product)
                     <tr>
-                        <td>{{$article->NAZWA_CALA}}</td>
-                        <td>{{$article->amount()}}</td>
-                        <td>{{$article->cenaDetaliczna()->first()->CENA_NETTO}}</td>
+                        <td>{{$product->NAZWA_CALA}}</td>
+                        <td>{{$product->amount()}}</td>
+                        <td>{{$product->cenaDetaliczna()->first()->CENA_NETTO}}</td>
                         <td class="text-right"><a class="btn btn-primary">{{__('resource.actions.view')}}</a></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        {{$articles->links()}}
+        {{$products->links()}}
     </div>
 @endsection
