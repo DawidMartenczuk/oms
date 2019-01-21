@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG\Kontrahent;
+namespace App\WFMAG\Kontrahent;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -56,6 +56,6 @@ class Kontakt extends Model
      */
     public function kontrahent()
     {
-        return $this->belongsTo('App\_3rd\WFMAG\Kontrahent', 'ID_KONTRAHENTA');
+        return $this->belongsTo('App\WFMAG\Kontrahent', 'ID_KONTRAHENTA');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG\Artykul;
+namespace App\WFMAG\Artykul;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -56,6 +56,6 @@ class Kategoria extends Model
      */
     public function artykuly()
     {
-        return $this->hasMany('App\_3rd\WFMAG\Artykul', 'ID_KATEGORII');
+        return $this->hasMany('App\WFMAG\Artykul', 'ID_KATEGORII');
     }
 }

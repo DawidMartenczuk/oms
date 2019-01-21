@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG;
+namespace App\WFMAG;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -56,6 +56,6 @@ class Zamowienie extends Model
      */
     public function pozycje()
     {
-        return $this->hasMany('App\_3rd\WFMAG\Zamowienie\Pozycja', 'ID_ZAMOWIENIA');
+        return $this->hasMany('App\WFMAG\Zamowienie\Pozycja', 'ID_ZAMOWIENIA');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG\Kontrahent;
+namespace App\WFMAG\Kontrahent;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -56,6 +56,6 @@ class Klasyfikacja extends Model
      */
     public function kontrahenci()
     {
-        return $this->hasMany('App\_3rd\WFMAG\Kontrahent', 'ID_KLASYFIKACJI');
+        return $this->hasMany('App\WFMAG\Kontrahent', 'ID_KLASYFIKACJI');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG;
+namespace App\WFMAG;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -56,7 +56,7 @@ class Kontrahent extends Model
      */
     public function kontakty()
     {
-        return $this->hasMany('App\_3rd\WFMAG\Kontrahent\Kontakt', 'ID_KONTRAHENTA');
+        return $this->hasMany('App\WFMAG\Kontrahent\Kontakt', 'ID_KONTRAHENTA');
     }
 
     /**
@@ -66,7 +66,7 @@ class Kontrahent extends Model
      */
     public function miejscaDostawy()
     {
-        return $this->hasMany('App\_3rd\WFMAG\Kontrahent\MiejsceDostawy', 'ID_KONTRAHENTA');
+        return $this->hasMany('App\WFMAG\Kontrahent\MiejsceDostawy', 'ID_KONTRAHENTA');
     }
 
     /**
@@ -76,7 +76,7 @@ class Kontrahent extends Model
      */
     public function adresy()
     {
-        return $this->hasMany('App\_3rd\WFMAG\Kontrahent\Adres', 'ID_KONTRAHENTA');
+        return $this->hasMany('App\WFMAG\Kontrahent\Adres', 'ID_KONTRAHENTA');
     }
 
     /**
@@ -86,7 +86,7 @@ class Kontrahent extends Model
      */
     public function klasyfikacja()
     {
-        return $this->belongsTo('App\_3rd\WFMAG\Kontrahent\Klasyfikacja', 'ID_KLASYFIKACJI');
+        return $this->belongsTo('App\WFMAG\Kontrahent\Klasyfikacja', 'ID_KLASYFIKACJI');
     }
 
     /**
@@ -96,6 +96,6 @@ class Kontrahent extends Model
      */
     public function grupa()
     {
-        return $this->belongsTo('App\_3rd\WFMAG\Kontrahent\Grupa', 'ID_GRUPY');
+        return $this->belongsTo('App\WFMAG\Kontrahent\Grupa', 'ID_GRUPY');
     }
 }

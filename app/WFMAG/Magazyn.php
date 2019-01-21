@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG;
+namespace App\WFMAG;
 
 use Illuminate\Database\Eloquent\Model;
 

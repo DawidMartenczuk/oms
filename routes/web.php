@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resourceVerbs(__('resource.verbs'));
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::resource('product', 'ProductController')->only(['index', 'show']);

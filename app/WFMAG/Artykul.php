@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG;
+namespace App\WFMAG;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -73,7 +73,7 @@ class Artykul extends Model
      */
     public function magazyn()
     {
-        return $this->belongsTo('App\_3rd\WFMAG\Magazyn', 'ID_MAGAZYNU');
+        return $this->belongsTo('App\WFMAG\Magazyn', 'ID_MAGAZYNU');
     }
 
     /**
@@ -83,7 +83,17 @@ class Artykul extends Model
      */
     public function ceny()
     {
-        return $this->hasMany('App\_3rd\WFMAG\Artykul\Cena', 'ID_ARTYKULU');
+        return $this->hasMany('App\WFMAG\Artykul\Cena', 'ID_ARTYKULU');
+    }
+
+    /**
+     * Get the articles prices that belongs to.
+     *
+     * @return \\App\\_3rd\\WFMAG\\Artykul\\Cena
+     */
+    public function cenaDetaliczna()
+    {
+        return $this->ceny()->where('ID_CENY', 1);
     }
 
     /**
@@ -93,7 +103,7 @@ class Artykul extends Model
      */
     public function dokumentyMagazynowe()
     {
-        return $this->belongsToMany('App\_3rd\WFMAG\DokumentMagazynowy', 'POZYCJA_DOKUMENTU_MAGAZYNOWEGO', 'ID_ARTYKULU', 'ID_DOK_MAGAZYNOWEGO')->whereNotNull('POZYCJA_DOKUMENTU_MAGAZYNOWEGO.ID_DOK_MAGAZYNOWEGO')->orderBy('DATA', 'DESC');
+        return $this->belongsToMany('App\WFMAG\DokumentMagazynowy', 'POZYCJA_DOKUMENTU_MAGAZYNOWEGO', 'ID_ARTYKULU', 'ID_DOK_MAGAZYNOWEGO')->whereNotNull('POZYCJA_DOKUMENTU_MAGAZYNOWEGO.ID_DOK_MAGAZYNOWEGO')->orderBy('DATA', 'DESC');
     }
 
     /**
@@ -131,6 +141,19 @@ class Artykul extends Model
     public function scopeAvailable($query)
     {
         return $query->whereRaw('(([STAN] - [ILOSC_EDYTOWANA] - [ZAREZERWOWANO]) > 0)');
+    }
+
+    /**
+     * Scope a query to only include available articles.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeDetal($query)
+    {
+        return $query->whereHas('ceny', function($q) {
+            $q->where('ID_CENY', 1)->where('CENA_NETTO', '>', 0);
+        });
     }
 
     /**

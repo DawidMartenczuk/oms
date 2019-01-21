@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG\Artykul;
+namespace App\WFMAG\Artykul;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -58,6 +58,6 @@ class Cena extends Model
      */
     public function cena()
     {
-        return $this->belongsTo('App\_3rd\WFMAG\Cena', 'ID_CENY');
+        return $this->belongsTo('App\WFMAG\Cena', 'ID_CENY');
     }
 }

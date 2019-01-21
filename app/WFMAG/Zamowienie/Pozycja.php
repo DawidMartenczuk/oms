@@ -1,6 +1,6 @@
 <?php
 
-namespace App\_3rd\WFMAG\Zamowienie;
+namespace App\WFMAG\Zamowienie;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -56,6 +56,6 @@ class Pozycja extends Model
      */
     public function zamowienie()
     {
-        return $this->belongsTo('App\_3rd\WFMAG\Zamowienie', 'ID_ZAMOWIENIA');
+        return $this->belongsTo('App\WFMAG\Zamowienie', 'ID_ZAMOWIENIA');
     }
 }
