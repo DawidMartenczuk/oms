@@ -1,6 +1,6 @@
 # Order Management System
 
-System zamówień prezentujący umiejętności integracji z systemem magazynowym Asseco WAPRO Mag, API firmy logistycznej GLS ADE PLUS, a także biegłość w implementacji projektów używając frameworku Laravel.
+System zamówień prezentujący umiejętności integracji z systemem magazynowym Asseco WAPRO Mag, a także biegłość w implementacji projektów używając frameworku Laravel.
 
 
 ### Integracja z WAPRO Mag
@@ -12,4 +12,4 @@ Procedury potrzebne do pracy systemu zostały zaimplementowane wewnątrz modeli 
 
 ### Obiekty lokalne Laravel
 
-Do prawidłowej obsługi sklepu postanowiłem zaimplementować kilka lokalnych obiektów, takich jak podstawowe modele wchodzące w skład modułu autoryzacyjnego Laravel, a także modele do obsługi API GLS.
+Do prawidłowej obsługi sklepu postanowiłem zaimplementować kilka lokalnych obiektów, takich jak podstawowe modele wchodzące w skład modułu autoryzacyjnego Laravel.
