@@ -1,5 +1,7 @@
 <?php
 return [
+    'address'   =>  '{1} Adres|[2,*] Adresy',
+    'count'     =>  '1 adres|:count adresy|:count adresów',
     'fields'    =>  [
         'recipient' =>  'Odbiorca',
         'business'  =>  'Nazwa firmy',

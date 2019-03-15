@@ -62,6 +62,36 @@ class Zamowienie extends Model
     }
 
     /**
+     * Get the products for the order.
+     *
+     * @return array
+     */
+    public function kontrahent()
+    {
+        return $this->belongsTo('App\WFMAG\Kontrahent', 'ID_KOTRAHENTA');
+    }
+
+    /**
+     * Get the products for the order.
+     *
+     * @return array
+     */
+    public function dostawy()
+    {
+        return $this->hasMany('App\WFMAG\Zamowienie\Dostawa', 'ID_ZAMOWIENIA');
+    }
+
+    /**
+     * Get the products for the order.
+     *
+     * @return array
+     */
+    public function kontakt()
+    {
+        return $this->belongsTo('App\WFMAG\Kontrahent\Kontakt', 'ID_KONTAKTU');
+    }
+
+    /**
      * Creates a order in database
      * 
      * @param array data of order
@@ -364,5 +394,17 @@ class Zamowienie extends Model
         $statement->execute();
 
         return $statement->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Get the Carbon date of order date
+     * 
+     * @return \Carbon\Carbon
+     */
+    public function date() {
+
+        $q = DB::connection('wfmag')->select(DB::raw('SELECT CONVERT(datetime, '.($this->DATA - 36163).') AS data'));
+
+        return \Carbon\Carbon::parse($q[0]->data);
     }
 }

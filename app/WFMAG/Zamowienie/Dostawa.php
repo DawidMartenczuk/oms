@@ -1,18 +1,18 @@
 <?php
 
-namespace App\WFMAG\Kontrahent;
+namespace App\WFMAG\Zamowienie;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * WFMAG`s delivery address object
+ * WFMAG`s order delivery object
  *
  * @package     oms
  * @author      <a href="mailto:dawidmartenczuk@naver.com">Dawid Martenczuk</a>
  * @version     1.0.0
  * @copyright   2019 Dawid Martenczuk
  */
-class MiejsceDostawy extends Model
+class Dostawa extends Model
 {
     /**
      * The connection associated with the model.
@@ -26,21 +26,21 @@ class MiejsceDostawy extends Model
      *
      * @var string
      */
-    protected $table = 'MIEJSCE_DOSTAWY';
+    protected $table = 'DOSTAWA';
 
     /**
      * Indicates if the IDs are auto-incrementing.
      *
      * @var bool
      */
-    public $incrementing = true;
+    public $incrementing = false;
 
     /**
      * The primary key used in table to unique identification of the model.
      *
      * @var string
      */
-    protected $primaryKey = 'ID_MIEJSCA_DOSTAWY';
+    protected $primaryKey = 'ID_DOSTAWY';
 
     /**
      * Indicates if the model should be timestamped.
@@ -50,22 +50,32 @@ class MiejsceDostawy extends Model
     public $timestamps = false;
 
     /**
-     * Get the kontrahent of the delivery address.
+     * Get the order of the delivery.
      *
-     * @return \\App\\WFMAG\\Kontrahent
+     * @return \\App\\WFMAG\\Zamowienie
      */
-    public function kontrahent()
+    public function zamowienie()
     {
-        return $this->belongsTo('App\WFMAG\Kontrahent', 'ID_KONTRAHENTA');
+        return $this->belongsTo('App\WFMAG\Zamowienie', 'ID_ZAMOWIENIA');
     }
 
     /**
-     * Get the country of the delivery address.
+     * Get the delivery place of the delivery.
      *
-     * @return \\App\\WFMAG\\Kraj
+     * @return \\App\\WFMAG\\MiejsceDostawy
      */
-    public function kraj()
+    public function miejsce()
     {
-        return $this->belongsTo('App\WFMAG\Kraj', 'SYM_KRAJU');
+        return $this->belongsTo('App\WFMAG\Kontrahent\MiejsceDostawy', 'ID_MIEJSCA_DOSTAWY');
+    }
+
+    /**
+     * Get the form of the delivery.
+     *
+     * @return \\App\\WFMAG\\FormaDostawy
+     */
+    public function forma()
+    {
+        return $this->belongsTo('App\WFMAG\FormaDostawy', 'ID_FORMY_DOSTAWY');
     }
 }

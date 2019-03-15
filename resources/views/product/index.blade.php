@@ -5,7 +5,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th colspan="4">{{trans_choice('product.product', 2)}}</th>
+                    <th colspan="4">{{trans_choice('product.count', $products->total())}} ({{($products->currentPage() - 1) * $products->perPage() + 1}} - {{$products->currentPage() * $products->perPage()}})</th>
                 </tr>
                 <tr>
                     <th>{{__('product.fields.name')}}</th>

@@ -26,7 +26,7 @@ class Pozycja extends Model
      *
      * @var string
      */
-    protected $table = 'ZAMOWIENIE';
+    protected $table = 'POZYCJA_ZAMOWIENIA';
 
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -40,7 +40,7 @@ class Pozycja extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'ID_ZAMOWIENIA';
+    protected $primaryKey = 'ID_POZYCJI_ZAMOWIENIA';
 
     /**
      * Indicates if the model should be timestamped.
@@ -57,5 +57,15 @@ class Pozycja extends Model
     public function zamowienie()
     {
         return $this->belongsTo('App\WFMAG\Zamowienie', 'ID_ZAMOWIENIA');
+    }
+
+    /**
+     * Get the article of the order product.
+     *
+     * @return \\App\\WFMAG\\Kontrahent
+     */
+    public function artykul()
+    {
+        return $this->belongsTo('App\WFMAG\Artykul', 'ID_ARTYKULU');
     }
 }

@@ -32,7 +32,7 @@
                                 <a class="nav-link" href="{{route('register')}}">{{__('auth.register')}}</a>
                             </li>
                         @else
-                            <li><a href="#" class="btn btn-outline-dark"><i class="fas fa-user-circle"></i> &nbsp; {{@Auth::user()->name}}</a></li>
+                            <li><a href="{{route('order.index')}}" class="btn btn-outline-dark"><i class="fas fa-user-circle"></i> &nbsp; {{@Auth::user()->name}}</a></li>
                         @endguest
                     </ul>
                 </div>
