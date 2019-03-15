@@ -10,11 +10,6 @@ Integracja z WAPRO Mag odbywa się przez wykorzystanie ORM, dostarczonego we fra
 
 Procedury potrzebne do pracy systemu zostały zaimplementowane wewnątrz modeli jako metody statyczne.
 
-### Integracja z GLS (SOAP)
-<img align="center" src="https://gls-group.eu/PL/media/images/ADE-Plus-logo-20371_Table.png" />
-
-Do integracji GLS SOAP wykonałem niewielki interfejs do obsługi zewnętrznego API, prezentując umiejętności implementacji obsługi interfejsów programistycznych SOAP WSDL.
-
 ### Obiekty lokalne Laravel
 
 Do prawidłowej obsługi sklepu postanowiłem zaimplementować kilka lokalnych obiektów, takich jak podstawowe modele wchodzące w skład modułu autoryzacyjnego Laravel, a także modele do obsługi API GLS.
