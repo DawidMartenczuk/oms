@@ -6,7 +6,10 @@ return [
         'name'          =>  'Nazwa',
         'price'         =>  'Cena',
         'description'   =>  'Opis',
+        'code'          =>  'Kod producenta',
+        'barcode'       =>  'Kod kreskowy',
         'images'        =>  'Zdjęcia',
+        'manufacturer'  =>  'Producent',
         'created_at'    =>  'Utworzono',
         'updated_at'    =>  'Aktualizowano'
     ],

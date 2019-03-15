@@ -1,6 +1,8 @@
 {
     "/front/1.0/js/bootstrap.js": "/front/1.0/js/bootstrap.js",
     "/front/1.0/css/app.css": "/front/1.0/css/app.css",
-    "/front/1.0/js/bootstrap.min.js": "/front/1.0/js/bootstrap.min.js",
+    "/front/1.0/js/cart.js": "/front/1.0/js/cart.js",
+    "/front/1.0/js/app.min.js": "/front/1.0/js/app.min.js",
+    "/front/1.0/js/cart.min.js": "/front/1.0/js/cart.min.js",
     "/front/1.0/css/app.min.css": "/front/1.0/css/app.min.css"
 }

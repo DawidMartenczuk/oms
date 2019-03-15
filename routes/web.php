@@ -16,5 +16,7 @@ Route::resourceVerbs(__('resource.verbs'));
 Route::get('/', 'ProductController@index')->name('home');
 
 Route::resource('product', 'ProductController')->only(['index', 'show']);
+Route::resource('cart', 'CartController')->only(['index', 'store', 'update', 'destroy']);
+Route::resource('order', 'OrderController')->only(['index', 'show']);
 
 Auth::routes();

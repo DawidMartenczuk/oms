@@ -12,31 +12,14 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = \App\WFMAG\Artykul::available()->detal()->paginate(10);
+        $products = \App\WFMAG\Artykul::sellable()->available()->detal();
+        if($request->has('q')) {
+            $products->where('NAZWA_CALA', 'LIKE', sprintf('%%%s%%', $request->input('q')));
+        }
+        $products = $products->paginate(10);
         return view('product.index', ['products'=>$products]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -45,42 +28,8 @@ class ProductController extends Controller
      * @param  \App\WFMAG\Artykul  $artykul
      * @return \Illuminate\Http\Response
      */
-    public function show(Artykul $artykul)
+    public function show(Request $request, Artykul $product)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\WFMAG\Artykul  $artykul
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Artykul $artykul)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\WFMAG\Artykul  $artykul
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Artykul $artykul)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\WFMAG\Artykul  $artykul
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Artykul $artykul)
-    {
-        //
+        return view('product.show', ['product'=>$product]);
     }
 }

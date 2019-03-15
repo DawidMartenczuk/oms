@@ -5,6 +5,10 @@ return [
         'edit'      =>  'edytuj'
     ],
     'actions'   =>  [
-        'view'      =>  'Przeglądaj'
+        'view'      =>  'Przeglądaj',
+        'buy'       =>  'Kup',
+        'edit'      =>  'Edytuj',
+        'destroy'   =>  'Usuń',
+        'select'    =>  'Wybierz'
     ]
 ];

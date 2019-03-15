@@ -52,10 +52,10 @@ class MiejsceDostawy extends Model
     /**
      * Get the kontrahent of the delivery address.
      *
-     * @return \\App\\_3rd\\WFMAG\\Kontrahent
+     * @return \\App\\WFMAG\\Kontrahent
      */
     public function kontrahent()
     {
-        return $this->belongsTo('App\WFMAG\Kontrahent\Kontrahent', 'ID_KONTRAHENTA');
+        return $this->belongsTo('App\WFMAG\Kontrahent', 'ID_KONTRAHENTA');
     }
 }

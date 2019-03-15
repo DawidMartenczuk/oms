@@ -54,7 +54,7 @@ class Cena extends Model
     /**
      * Get the articles price that belongs to.
      *
-     * @return \\App\\_3rd\\WFMAG\\Cena
+     * @return \\App\\WFMAG\\Cena
      */
     public function cena()
     {

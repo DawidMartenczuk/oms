@@ -69,7 +69,7 @@ class Artykul extends Model
     /**
      * Get the articles magazyn that belongs to.
      *
-     * @return \\App\\_3rd\\WFMAG\\Magazyn
+     * @return \\App\\WFMAG\\Magazyn
      */
     public function magazyn()
     {
@@ -77,9 +77,19 @@ class Artykul extends Model
     }
 
     /**
+     * Get the articles unit that belongs to.
+     *
+     * @return \\App\\WFMAG\\Magazyn
+     */
+    public function jednostka()
+    {
+        return $this->belongsTo('App\WFMAG\Jednostka', 'ID_JEDNOSTKI');
+    }
+
+    /**
      * Get the articles prices that belongs to.
      *
-     * @return \\App\\_3rd\\WFMAG\\Artykul\\Cena
+     * @return \\App\\WFMAG\\Artykul\\Cena
      */
     public function ceny()
     {
@@ -89,7 +99,7 @@ class Artykul extends Model
     /**
      * Get the articles prices that belongs to.
      *
-     * @return \\App\\_3rd\\WFMAG\\Artykul\\Cena
+     * @return \\App\\WFMAG\\Artykul\\Cena
      */
     public function cenaDetaliczna()
     {
@@ -129,7 +139,7 @@ class Artykul extends Model
      */
     public function amount()
     {
-        return $this->STAN - $this->ILOSC_EDYTOWANA - $this->ZAREZERWOWANO;
+        return round($this->STAN - $this->ILOSC_EDYTOWANA - $this->ZAREZERWOWANO, $this->jednostka->PODZIELNA ? 4 : 0);
     }
 
     /**
@@ -154,6 +164,10 @@ class Artykul extends Model
         return $query->whereHas('ceny', function($q) {
             $q->where('ID_CENY', 1)->where('CENA_NETTO', '>', 0);
         });
+    }
+
+    public function scopeSellable($query) {
+        $query->where('DOSTEPNY_W_SKLEPIE_INTER', '!=', 0);
     }
 
     /**

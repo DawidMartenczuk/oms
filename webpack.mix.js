@@ -14,6 +14,10 @@ const mix = require('laravel-mix');
 let version = '1.0';
 
 mix.js('resources/js/bootstrap.js', 'front/' + version + '/js')
+   .js('resources/js/cart.js', 'front/' + version + '/js')
    .sass('resources/sass/app.scss', 'front/' + version + '/css');
-mix.minify('public/front/' + version + '/js/bootstrap.js');
+   
+mix.minify('public/front/' + version + '/js/app.js');
+mix.minify('public/front/' + version + '/js/cart.js');
+
 mix.minify('public/front/' + version + '/css/app.css');

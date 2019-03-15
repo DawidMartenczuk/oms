@@ -52,7 +52,7 @@ class Pozycja extends Model
     /**
      * Get the order of the order product.
      *
-     * @return \\App\\_3rd\\WFMAG\\Kontrahent
+     * @return \\App\\WFMAG\\Kontrahent
      */
     public function zamowienie()
     {

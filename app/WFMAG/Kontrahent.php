@@ -82,7 +82,7 @@ class Kontrahent extends Model
     /**
      * Get the klasyfikacja of the kontrahent.
      *
-     * @return \\App\\_3rd\\WFMAG\\Kontrahent\\Klasyfikacja
+     * @return \\App\\WFMAG\\Kontrahent\\Klasyfikacja
      */
     public function klasyfikacja()
     {
@@ -92,10 +92,32 @@ class Kontrahent extends Model
     /**
      * Get the klasyfikacja of the kontrahent.
      *
-     * @return \\App\\_3rd\\WFMAG\\Kontrahent\\Grupa
+     * @return \\App\\WFMAG\\Kontrahent\\Grupa
      */
     public function grupa()
     {
         return $this->belongsTo('App\WFMAG\Kontrahent\Grupa', 'ID_GRUPY');
+    }
+
+    /**
+     * Get the user of the kontrahent.
+     *
+     * @return \\App\\User
+     */
+    public function kontrahent()
+    {
+        return $this->belongsTo('App\User', 'ID_KONTRAHENTA', 'ID_KONTRAHENTA');
+    }
+
+    /**
+     * Creates a customer in database
+     * 
+     * @param array data of customer
+     * 
+     * @return Kontrahent
+     */
+    public static function create($data) {
+        $data['ID_KONTRAHENTA'] = (int)((int)\App\WFMAG\Kontrahent::with('ID_KONTRAHENTA')->max('ID_KONTRAHENTA') + 1);
+        return parent::create($data);
     }
 }

@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'ID_KONTRAHENTA'
     ];
 
     /**
@@ -27,4 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the kontrahent of the user.
+     *
+     * @return \\App\\WFMAG\\Kontrahent
+     */
+    public function kontrahent()
+    {
+        return $this->belongsTo('App\WFMAG\Kontrahent', 'ID_KONTRAHENTA', 'ID_KONTRAHENTA');
+    }
 }

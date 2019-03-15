@@ -52,7 +52,7 @@ class DokumentMagazynowy extends Model
     /**
      * Get the client of the warehouse document.
      *
-     * @return \\App\\_3rd\\WFMAG\\Kontrahent
+     * @return \\App\\WFMAG\\Kontrahent
      */
     public function kontrahent()
     {

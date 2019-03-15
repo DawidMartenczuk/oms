@@ -1,18 +1,18 @@
 <?php
 
-namespace App\WFMAG\Kontrahent;
+namespace App\WFMAG;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * WFMAG`s customer contact object
+ * WFMAG`s country object
  *
  * @package     oms
  * @author      <a href="mailto:dawidmartenczuk@naver.com">Dawid Martenczuk</a>
  * @version     1.0.0
  * @copyright   2019 Dawid Martenczuk
  */
-class Kontakt extends Model
+class Kraj extends Model
 {
     /**
      * The connection associated with the model.
@@ -26,21 +26,21 @@ class Kontakt extends Model
      *
      * @var string
      */
-    protected $table = 'KONTAKT';
+    protected $table = 'KRAJE';
 
     /**
      * Indicates if the IDs are auto-incrementing.
      *
      * @var bool
      */
-    public $incrementing = true;
+    public $incrementing = false;
 
     /**
      * The primary key used in table to unique identification of the model.
      *
      * @var string
      */
-    protected $primaryKey = 'ID_KONTAKTU';
+    protected $primaryKey = 'SYM_KRAJU';
 
     /**
      * Indicates if the model should be timestamped.
@@ -48,14 +48,4 @@ class Kontakt extends Model
      * @var bool
      */
     public $timestamps = false;
-
-    /**
-     * Get the kontrahent of the contact.
-     *
-     * @return \\App\\WFMAG\\Kontrahent
-     */
-    public function kontrahent()
-    {
-        return $this->belongsTo('App\WFMAG\Kontrahent', 'ID_KONTRAHENTA');
-    }
 }

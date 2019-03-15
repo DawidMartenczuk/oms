@@ -5,7 +5,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>{{trans_choice('product.product', 2)}}</th>
+                    <th colspan="4">{{trans_choice('product.product', 2)}}</th>
                 </tr>
                 <tr>
                     <th>{{__('product.fields.name')}}</th>
@@ -17,10 +17,10 @@
             <tbody>
                 @foreach($products as $product)
                     <tr>
-                        <td>{{$product->NAZWA_CALA}}</td>
+                        <td>{{$product->NAZWA_CALA}}<br/><small class="text-muted">{{$product->PRODUCENT}}</small></td>
                         <td>{{$product->amount()}}</td>
-                        <td>{{$product->cenaDetaliczna()->first()->CENA_NETTO}}</td>
-                        <td class="text-right"><a class="btn btn-primary">{{__('resource.actions.view')}}</a></td>
+                        <td>{{number_format($product->cenaDetaliczna()->first()->CENA_NETTO, 2)}} zł</td>
+                        <td class="text-right"><a class="btn btn-primary" href="{{route('product.show', $product->ID_ARTYKULU)}}">{{__('resource.actions.view')}}</a></td>
                     </tr>
                 @endforeach
             </tbody>
