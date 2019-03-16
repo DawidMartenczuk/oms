@@ -30,6 +30,5 @@ I added EAN barcode preview, that allow you to scan barcode with scanner, and in
 * Laravel framework
 * SQL Server
 * Documentation reading
-* Using MVC Architecture
 * Integration with external data sources
-* MVC architecture and writing CRUD controllers
+* Using MVC architecture and writing CRUD controllers
