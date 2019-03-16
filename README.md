@@ -13,6 +13,7 @@ For this project I implemented default Laravel objects that are built-in framewo
 
 ### Available options in app
 
+* Login, Register, Reset password
 * View list of products in Warehouse
 * View details of product
 * Create order
@@ -22,3 +23,13 @@ For this project I implemented default Laravel objects that are built-in framewo
 ### Additional stuff
 
 I added EAN barcode preview, that allow you to scan barcode with scanner, and insert this code in your device.
+
+### Used skills
+
+* PHP7
+* Laravel framework
+* SQL Server
+* Documentation reading
+* Using MVC Architecture
+* Integration with external data sources
+* MVC architecture and writing CRUD controllers
