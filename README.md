@@ -5,17 +5,18 @@ Order Management System that presents skills of implementation a Laravel App, us
 ### WAPRO Mag Integration
 <img align="center" src="https://logos-net.pl/wp-content/uploads/2013/12/logo_wapro400x200.png" />
 
-My integration with Asseco WAPRO Mag using a built-in Laravel ORM - Eloquent. By mapping a useful objects for my project, we can impleemnt in a simply way a lot of features, for example I created a Controllers that allow you to view a list of products in ERP Warehouse database, create new orders, insert new data of our customer profile, preview our orders and data, and more, and more.
+My integration with Asseco WAPRO Mag using a built-in Laravel ORM - Eloquent. By mapping a useful objects for my project, we can implement it in a simply way with a lot of features. For example in a short time I Developed a Controllers that allow you to view a list of products in ERP Warehouse database, collect a cart, create new orders, insert new data of our customer profile, preview our orders and data, and more, and more.
 
-### Laravel objects
+### Laravel
 
-For this project I implemented default Laravel objects that are built-in framework - especially a Authentication models, that allow users to register, login, and reset passwords.
+For this project I implemented default Laravel objects that are built-in framework - especially a Authentication models, that allow users to register, login, and reset passwords. Laravel's MVC specification, in my opinion, is simpliest than in other Frameworks. So Development in this framework is easy for me, and it allows to complete projects very fast with it.
 
 ### Available options in app
 
 * Login, Register, Reset password
 * View list of products in Warehouse
 * View details of product
+* Collect product in Cart
 * Create order
 * Insert or view data of our customer profile in ERP
 * View our orders
